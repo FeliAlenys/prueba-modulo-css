@@ -1,0 +1,442 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8bbd0; 
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f8bbd0; 
+    color:#ffffff;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+/* Menu de navegación*/
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0,3 ease;
+}
+
+.menu a:hover {
+    color: #e1e1e1;
+}
+
+/* Iconos de rrss */
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    /* Cambia los íconos a color blanco */
+}
+
+/* barra de busqueda*/
+.search-bar input {
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333333;
+}
+
+.search-bar input::placeholder {
+    color: #ffffff;
+}
+
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    margin-right: 15px;
+    transition: transform 0.5s ease;
+}
+
+.logo img:hover {
+    transform: rotate(360deg); /* Rotación al pasar el mouse */
+}
+
+.logo span {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* Carrusel contenedor */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto; 
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+    height: auto;
+    max-height: 500px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1/1;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    padding: 15px;
+    max-width: 60%;
+    border-radius: 10px;
+}
+
+.carousel-caption h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.carousel-caption p {
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Grilla de noticias */
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.noticias-container {
+    padding: 20px; /* Agrega algo de espaciado alrededor del contenedor */
+}
+
+h2 {
+    text-align: center; /* Centra el texto del encabezado */
+    font-size: 2em; /* Tamaño del texto */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    color: #ffffff; /* Color del texto */
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.noticia {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.noticia:hover {
+    transform: scale(1.05);
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.3 ease;
+}
+
+.noticia:hover img {
+    opacity: 0.3; /* Opacidad de la imagen al pasar el mouse */
+}
+
+.overlay {
+    position: absolute; /* Posición absoluta dentro de la tarjeta */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Color blanco con un poco de transparencia */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    opacity: 0; /* Comienza oculto */
+    transition: opacity 0.3s ease; /* Animación para mostrar la superposición */
+}
+
+.noticia:hover .overlay {
+    opacity: 1; /* Muestra la superposición al pasar el mouse */
+}
+
+.overlay a {
+    text-decoration: none; /* Quita el subrayado */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.2em; /* Tamaño del texto */
+}
+
+.categoria {
+    background-color: #F8BBD0; /* El mismo color del navbar */
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.noticia h3 {
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    flex-grow: 1;
+}
+
+.noticia p {
+    padding: 0 10px;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.noticia span {
+    padding: 0 10px;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+/* Sidebar  */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 20px;
+    background-color: #f8bbd0; /* Color de fondo del aside */
+}
+
+/* Tarjetas de noticias */
+.noticia-card {
+    background-color: #1C4F91;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/*.instagram-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.post {
+    margin: 10px;
+    text-align: center;
+}
+
+.instagram-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.instagram-image:hover {
+    transform: scale(1.05);
+}*/
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0A1F44;
+}
+
+/* Iconos de rrss */
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-icons img {
+    width: 30px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    /* Cambia los íconos a color blanco */
+}
+
+/*.layout {  
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "carrusel carrusel carrusel"
+        "menu noticia noticia"
+        "footer footer footer";
+    height: 100vh;
+    width: 100vw;
+}*/
+
+
+
+/* Versión móvil */
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu {
+        display: none; /* Oculto por defecto en móvil */
+    }
+    
+    .search-bar {
+        margin-top: 10px;
+    }
+
+    .carousel-item {
+        max-height: 300px; /* Menos alto en dispositivos móviles */
+    }
+
+    .carousel-caption {
+        max-width: 80%; /* Mayor ancho para el texto en móviles */
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.5em;
+    }
+
+    .carousel-caption p {
+        font-size: 1em;
+    }
+
+    .noticias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+@media (min-width: 576px) {
+    /* Navbar en escritorio */
+    .navbar {
+        justify-content: space-around;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-bar {
+        display: block;
+    }
+
+    /* Main grid con CSS Grid */
+    .main-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 20px;
+    }
+
+    /* Tarjetas de noticias en grilla */
+    .noticias-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    /* Logo con transición */
+    .logo-transicion img {
+        width: 100px;
+        transition: transform 0.5s ease;
+    }
+
+    .logo-transicion img:hover {
+        transform: rotate(360deg);
+    }
+
+    /* Footer */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+}
